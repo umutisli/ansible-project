@@ -1,0 +1,10 @@
+---
+# handlers file for react
+    - name: launch react docker container
+      community.docker.docker_container:
+        name: "{{ container_name }}"
+        image: "{{ image_name }}"
+        state: started
+        ports:
+          - "3000:3000"
+      register: container_info
